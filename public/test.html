@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Street View Tour Page</title>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const tourId = parseFloat(urlParams.get('tourId'));
+    const placeId = parseFloat(urlParams.get('placeId'));
+  
+    async function generateResponse(place) {
+      const prompt = "You're a AI Tour Guide. All responses in 55 words. Tell me about this place: "+ place.title;
+
+      try {
+        const response = await fetch('http://localhost:3000/generate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ prompt }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to get response');
+        }
+
+        const data = await response.json();
+        return data.response;
+      } catch (error) {
+        console.error('Error:', error);
+        return 'Error generating response';
+      }
+    }
+
+    function initialize() {
+      fetch('tours.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json(); // Parse JSON data
+    })
+    .then(data => {
+        // Do something with the data
+        tours = data;
+        const tour = tours[tourId]
+        const place = tour.places[placeId];
+        tourTitle = document.getElementById("tourTitle");
+        tourTitle.innerHTML = tour.city_name
+        placeTitle = document.getElementById("placeTitle");
+        placeTitle.innerHTML = place.title;
+        placeTitleTwo = document.getElementById("placeTitleTwo");
+        placeTitleTwo.innerHTML = place.title;
+        placeDescription = document.getElementById("placeDescription");
+        generateResponse(place).then(responseText => {
+          placeDescription.innerHTML = responseText;
+        })
+      
+      // Set a default location if no coordinates are provided
+      const location = (!isNaN(place.latitude) && !isNaN(place.longitude)) 
+        ? { lat: place.latitude, lng: place.longitude }
+        : { lat: 40.6892, lng: -74.0445 }; // Default: Statue of Liberty
+
+      // Initialize the map
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center: location,
+        zoom: 14,
+      });
+
+      // Initialize the panorama view
+      const panorama = new google.maps.StreetViewPanorama(document.getElementById("pano"), {
+        position: location,
+        pov: {
+          heading: 34,
+          pitch: 10,
+        },
+      });
+
+      map.setStreetView(panorama); // Display JSON data
+    })
+    .catch(error => {
+        console.error('Error fetching the JSON:', error);
+    });
+      // Parse latitude and longitude from URL parameters
+    }
+
+    window.initialize = initialize;
+
+  </script>
+  <style>
+    /* Reset and Basic Styles */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .bg-indigo-50 {
+      background-color: #f0f4ff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    /* Main layout styles */
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      position: relative;
+    }
+
+    .pano-container {
+      position: relative;
+      background-color: white;
+      padding: 0 2rem 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 1rem;
+      overflow: hidden;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Title styles */
+    .title-container {
+      position: relative;
+      z-index: 5;
+      text-align: center; /* Ensure it appears above the pano */
+    }
+
+    .pano-container h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #1f2937;
+      margin-bottom: 0.1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .place-info {
+      color: #c2410c;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    #pano {
+      flex: 1;
+      height: 100%;
+      width: 100%;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .next-place-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      color: #3b82f6;
+      border: 2px solid #3b82f6;
+      border-radius: 0.5rem;
+      background: transparent;
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s;
+      margin-top: 1rem;
+    }
+
+    .next-place-btn:hover {
+      background-color: #dbeafe;
+      color: #1f2937;
+    }
+
+    /* Tour Guide Overlay */
+    .tour-guide {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 300px;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    }
+
+    .tour-guide h3 {
+      font-size: 1.75rem;
+      font-weight: bold;
+      color: #1f2937;
+      margin-bottom: 1rem;
+    }
+
+    .tour-guide h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+    }
+
+    .tour-guide p {
+      font-size: 1rem;
+      color: #6b7280;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .tour-guide #map {
+      width: 100%;
+      height: 150px;
+      border-radius: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .tour-guide {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: auto;
+        bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="bg-indigo-50">
+    <div class="container">
+      <main class="pano-container">
+        <!-- AI Tour Guide Overlay -->
+        <aside class="tour-guide">
+          <h3>AI Tour Guide</h3>
+          <h2 id="placeTitleTwo">Piazza Navona</h2>
+          <p id="placeDescription">Elegant square with fountains and cafes.</p>
+          <div id="map"></div>
+        </aside>
+        
+        <h1 id="tourTitle">Rome</h1>
+        <div class="place-info" id="placeTitle">Piazza Navona</div>
+        <div id="pano"></div>
+        <button onclick="initialize()" id="Submit" class="next-place-btn">
+          Next Place
+        </button>
+      </main>
+    </div>
+  </section>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7OIFZaVPdrLkfIEfrHAzumRr00uGXrLc&callback=initialize" defer></script>
+  <script>
+
+    function nextPlace () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const tourId = parseFloat(urlParams.get('tourId'));
+      let placeId = parseFloat(urlParams.get('placeId'));
+      if (placeId <= 3) {
+        window.location.replace(`http://127.0.0.1:5501/public/test.html?tourId=${tourId}&placeId=${placeId + 1}`);
+      }
+      else {
+        window.location.replace(`http://127.0.0.1:5501/public/test.html?tourId=${tourId}&placeId=0`);
+      }
+    }
+      document.getElementById('Submit').addEventListener('click', () => {
+        nextPlace();
+    });
+
+    let cursorX, cursorY;
+
+    document.addEventListener("mousemove", (event) => {
+      cursorX = event.clientX;
+      cursorY = event.clientY;
+    });
+
+    function clickAtCursor() {
+      const element = document.elementFromPoint(cursorX, cursorY); // Get element at cursor position
+      if (element) {
+        element.click(); // Simulate click on that element
+      }
+    }
+
+    document.addEventListener("keydown", function(event) {
+      // Press "F" to toggle fullscreen mode for Street View
+      function toggleStreetViewFullscreen() {
+      const panoElement = document.getElementById("pano");
+      clickAtCursor();
+
+
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+  } else {
+    panoElement.requestFullscreen();
+  }
+  }
+    if (event.key === "f" || event.key === "F") {
+      toggleStreetViewFullscreen();
+    }
+    if (event.key === "Z" || event.key === "z") {
+      nextPlace();
+    }
+    if (event.key === "H" || event.key === "h") {
+      window.location.replace(`http://localhost:5173/results`);
+    }
+  });
+
+  </script>
+</body>
+</html>

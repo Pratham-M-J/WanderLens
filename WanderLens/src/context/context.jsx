@@ -24,6 +24,7 @@ const ContextProvider = (props) => {
         }
 
         setResultData(response);
+        localStorage.setItem('placeData', JSON.stringify({ bot_response: response }));
         setLoading(false);
         setShowResult(true); // Show results
     };

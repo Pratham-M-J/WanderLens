@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "city_name": "New York",
+        "description": "A bustling metropolis known for its skyline and vibrant culture.",
+        "places": [
+            {"title": "Statue of Liberty", "latitude": 40.6892, "longitude": -74.0445, "description": "Iconic symbol of freedom."},
+            {"title": "Central Park", "latitude": 40.7851, "longitude": -73.9683, "description": "Vast green oasis in the middle of the city."},
+            {"title": "Times Square", "latitude": 40.7580, "longitude": -73.9855, "description": "Lively entertainment hub."},
+            {"title": "Empire State Building", "latitude": 40.7484, "longitude": -73.9857, "description": "Historic skyscraper with city views."},
+            {"title": "Brooklyn Bridge", "latitude": 40.7061, "longitude": -73.9969, "description": "Famous suspension bridge connecting Manhattan and Brooklyn."}
+        ]
+    },
+    {
+        "id": 2,
+        "city_name": "Brussels",
+        "description": "Capital of Belgium known for its historical architecture and chocolates.",
+        "places": [
+            {"title": "Grand Place", "latitude": 50.8467, "longitude": 4.3499, "description": "Historic square in the city center."},
+            {"title": "Atomium", "latitude": 50.8949, "longitude": 4.3416, "description": "Unique steel structure with panoramic views."},
+            {"title": "Manneken Pis", "latitude": 50.8451, "longitude": 4.3498, "description": "Iconic bronze statue of a boy."},
+            {"title": "Royal Palace", "latitude": 50.8427, "longitude": 4.3584, "description": "The official palace of the Belgian King."},
+            {"title": "Mini-Europe", "latitude": 50.8947, "longitude": 4.3415, "description": "Park with miniature versions of European landmarks."}
+        ]
+    },
+    {
+        "id": 3,
+        "city_name": "Bern",
+        "description": "The capital city of Switzerland, known for its medieval architecture.",
+        "places": [
+            {"title": "Zytglogge", "latitude": 46.9470, "longitude": 7.4474, "description": "Medieval clock tower in the city center."},
+            {"title": "Bern Cathedral", "latitude": 46.9481, "longitude": 7.4515, "description": "Gothic cathedral with panoramic views."},
+            {"title": "Federal Palace", "latitude": 46.9464, "longitude": 7.4446, "description": "Swiss parliament building."},
+            {"title": "Bern Historical Museum", "latitude": 46.9430, "longitude": 7.4526, "description": "Museum showcasing Swiss history and culture."},
+            {"title": "Rose Garden", "latitude": 46.9488, "longitude": 7.4563, "description": "Park with beautiful views over the old town."}
+        ]
+    },
+    {
+        "id": 4,
+        "city_name": "Osaka",
+        "description": "A vibrant city in Japan known for its modern architecture and street food.",
+        "places": [
+            {"title": "Osaka Castle", "latitude": 34.6873, "longitude": 135.5259, "description": "Historic Japanese castle with a museum."},
+            {"title": "Dotonbori", "latitude": 34.6687, "longitude": 135.5019, "description": "Famous street with neon lights and street food."},
+            {"title": "Universal Studios Japan", "latitude": 34.6654, "longitude": 135.4324, "description": "Popular theme park with movie-themed attractions."},
+            {"title": "Shitennoji Temple", "latitude": 34.6545, "longitude": 135.5169, "description": "Ancient Buddhist temple and historic site."},
+            {"title": "Umeda Sky Building", "latitude": 34.7056, "longitude": 135.4893, "description": "Unique skyscraper with a rooftop observatory."}
+        ]
+    },
+    {
+        "id": 5,
+        "city_name": "London",
+        "description": "Capital of the United Kingdom, known for its rich history and iconic landmarks.",
+        "places": [
+            {"title": "Big Ben", "latitude": 51.5007, "longitude": -0.1246, "description": "Famous clock tower of the Palace of Westminster."},
+            {"title": "Tower of London", "latitude": 51.5081, "longitude": -0.0759, "description": "Historic castle housing the Crown Jewels."},
+            {"title": "Buckingham Palace", "latitude": 51.5014, "longitude": -0.1419, "description": "Residence of the British monarch."},
+            {"title": "British Museum", "latitude": 51.5194, "longitude": -0.1270, "description": "Museum with a vast collection of world art and artifacts."},
+            {"title": "London Eye", "latitude": 51.5033, "longitude": -0.1195, "description": "Giant Ferris wheel with views of the city."}
+        ]
+    },
+    {
+        "id": 6,
+        "city_name": "Mumbai",
+        "description": "India's financial hub, known for its fast-paced life and historic landmarks.",
+        "places": [
+            {"title": "Gateway of India", "latitude": 18.9220, "longitude": 72.8347, "description": "Monumental arch overlooking the Arabian Sea."},
+            {"title": "Marine Drive", "latitude": 18.9440, "longitude": 72.8235, "description": "Scenic promenade by the sea."},
+            {"title": "Elephanta Caves", "latitude": 18.9634, "longitude": 72.9312, "description": "Ancient rock-cut temples on Elephanta Island."},
+            {"title": "Chhatrapati Shivaji Maharaj Terminus", "latitude": 18.9402, "longitude": 72.8356, "description": "Historic railway station and UNESCO site."},
+            {"title": "Haji Ali Dargah", "latitude": 18.9824, "longitude": 72.8081, "description": "Islamic shrine located in the sea."}
+        ]
+    },
+    {
+        "id": 7,
+        "city_name": "Paris",
+        "description": "The capital of France, known for its art, culture, and landmarks.",
+        "places": [
+            {"title": "Eiffel Tower", "latitude": 48.8584, "longitude": 2.2945, "description": "World-famous iron lattice tower."},
+            {"title": "Louvre Museum", "latitude": 48.8606, "longitude": 2.3376, "description": "Home to the Mona Lisa and extensive art collections."},
+            {"title": "Notre-Dame Cathedral", "latitude": 48.8530, "longitude": 2.3499, "description": "Gothic cathedral on the Île de la Cité."},
+            {"title": "Champs-Élysées", "latitude": 48.8698, "longitude": 2.3073, "description": "Famous avenue with shops and cafes."},
+            {"title": "Montmartre", "latitude": 48.8867, "longitude": 2.3431, "description": "Artistic district with Sacré-Cœur Basilica."}
+        ]
+    },
+    {
+        "id": 8,
+        "city_name": "Rome",
+        "description": "Historic capital of Italy, famous for its ancient ruins and vibrant culture.",
+        "places": [
+            {"title": "Colosseum", "latitude": 41.8902, "longitude": 12.4922, "description": "Ancient Roman amphitheater."},
+            {"title": "Pantheon", "latitude": 41.8986, "longitude": 12.4769, "description": "Well-preserved ancient Roman temple."},
+            {"title": "Trevi Fountain", "latitude": 41.9009, "longitude": 12.4833, "description": "Baroque fountain and popular tourist site."},
+            {"title": "Vatican Museums", "latitude": 41.9065, "longitude": 12.4536, "description": "Famous art museums within Vatican City."},
+            {"title": "Piazza Navona", "latitude": 41.8992, "longitude": 12.4731, "description": "Elegant square with fountains and cafes."}
+        ]
+    },
+    {
+        "id": 9,
+        "city_name": "Canberra",
+        "description": "The capital city of Australia, known for its museums, galleries, and parks.",
+        "places": [
+            {"title": "Australian War Memorial", "latitude": -35.2819, "longitude": 149.1489, "description": "A national memorial to Australian military history."},
+            {"title": "Parliament House", "latitude": -35.3075, "longitude": 149.1244, "description": "The meeting place of the Parliament of Australia."},
+            {"title": "National Gallery of Australia", "latitude": -35.2970, "longitude": 149.1355, "description": "Museum housing an extensive collection of Australian art."},
+            {"title": "Lake Burley Griffin", "latitude": -35.2925, "longitude": 149.1290, "description": "Artificial lake with recreational facilities."},
+            {"title": "Mount Ainslie Lookout", "latitude": -35.2733, "longitude": 149.1504, "description": "Lookout point offering panoramic views of Canberra."}
+        ]
+    },
+    {
+        "id": 10,
+        "city_name": "Venice",
+        "description": "The iconic Italian city known for its canals, art, and architecture.",
+        "places": [
+            {"title": "St. Mark's Basilica", "latitude": 45.4345, "longitude": 12.3393, "description": "Famous cathedral known for its Byzantine architecture."},
+            {"title": "Rialto Bridge", "latitude": 45.4386, "longitude": 12.3357, "description": "Historic bridge over the Grand Canal."},
+            {"title": "Doge's Palace", "latitude": 45.4336, "longitude": 12.3392, "description": "Palace that was the residence of the Doge of Venice."},
+            {"title": "Grand Canal", "latitude": 45.4390, "longitude": 12.3316, "description": "The main waterway lined with beautiful buildings."},
+            {"title": "Murano Island", "latitude": 45.4585, "longitude": 12.3534, "description": "Island known for its glass-making tradition."}
+        ]
+    }
+]

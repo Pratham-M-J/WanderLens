@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gemini AI Interface</title>
+</head>
+<body>
+  <h1>Gemini AI Text Generation</h1>
+  <input type="text" id="promptInput" placeholder="Enter your prompt here" />
+  <button onclick="generateResponse()">Generate Response</button>
+  <p id="output"></p>
+
+  <script>
+    async function generateResponse() {
+      const prompt = document.getElementById('promptInput').value;
+      if (!prompt) {
+        alert('Please enter a prompt');
+        return;
+      }
+
+      try {
+        const response = await fetch('http://localhost:3000/generate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ prompt }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to get response');
+        }
+
+        const data = await response.json();
+        document.getElementById('output').textContent = data.response;
+      } catch (error) {
+        console.error('Error:', error);
+        document.getElementById('output').textContent = 'Error generating response';
+      }
+    }
+  </script>
+</body>
+</html>
