@@ -1,0 +1,165 @@
+:root {
+    --primary: #fff;
+}
+
+/* Navbar styling */
+.navbar {
+    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+}
+
+/* Navbar container - use full width */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 24px;
+    max-width: 100%;
+}
+
+/* Logo */
+.navbar-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Menu icon */
+.menu-icon {
+    display: none;
+    font-size: 1.8rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Menu items */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    text-align: center;
+}
+
+.nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #333;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+/* Links */
+.nav-links {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-links:hover {
+    color: #ff6347;
+}
+
+/* Mobile-specific styles */
+.nav-links-mobile {
+    display: none;
+    margin: 2rem auto;
+    padding: 14px 20px;
+    font-size: 1.5rem;
+    color: #fff;
+    border-radius: 4px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: all 0.3s ease-out;
+}
+
+.nav-links-mobile:hover {
+    background: #fff;
+    color: #242424;
+    transition: all 0.3s ease-out;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 900px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .navbar-logo {
+        font-size: 1.6rem;
+    }
+
+    .nav-links-mobile {
+        display: block;
+    }
+}
+
+/* Button styles */
+.btn {
+    padding: 8px 20px;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn--primary {
+    background-color: var(--primary);
+    color: black;
+    border: 1px solid var(--primary);
+}
+
+.btn--outline {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid var(--primary);
+    transition: all 0.3s ease-out;
+}
+
+.btn--outline:hover {
+    background: #fff;
+    color: #242424;
+    transition: all 0.3s ease-out;
+}
+
+.btn--medium {
+    padding: 8px 20px;
+    font-size: 20px;
+}
+
+.btn--large {
+    padding: 12px 26px;
+    font-size: 20px;
+}
+
+/* Ensure button sizes are responsive */
+@media screen and (max-width: 900px) {
+    .btn--medium, .btn--large {
+        font-size: 18px;
+        padding: 6px 16px;
+    }
+}

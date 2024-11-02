@@ -1,0 +1,124 @@
+.cards2 {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    min-height: 100vh; 
+    padding: 0;
+}
+
+.cards2__container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%; 
+    margin: 10px;
+    padding: 0; 
+}
+
+.cards2__wrapper {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    margin: 0 auto; /* Center the wrapper within the container */
+    
+    padding: 0; /* Remove any extra padding */
+}
+
+.cards2__items {
+    display: flex;
+    flex-wrap: wrap; 
+    list-style-type: none; 
+    padding: 0px;
+   
+}
+
+.cards2__item {
+    margin: 10px; /* Space between cards */
+    width: 300px; /* Set a fixed width for cards */
+    height: 350px; /* Increased height for cards */
+    perspective: 1000px; /* Creates a 3D space for the flip effect */
+}
+
+.cards2__item__link {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    display: flex; /* Make the link a flex container */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+
+.cards2__item:hover .cards2__item__link {
+    transform: rotateY(180deg); /* Flip on hover */
+}
+
+.cards2__item__link .front,
+.cards2__item__link .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 4px 16px 16px rgba(176, 194, 220, 0.2);
+}
+
+
+.cards2__item__link .front {
+    background-image: linear-gradient(16deg, #5861df, #5a91dd);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    z-index: 2;
+}
+
+/* Image wrapper */
+.cards2__items__pic__wrap {
+    width: 100%;
+    height: 250px; /* Increased height for images */
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex; /* Make the image wrapper a flex container */
+    align-items: center; /* Center the image vertically */
+    justify-content: center; /* Center the image horizontally */
+}
+
+.cards2__item__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images cover the area without distortion */
+}
+
+.cards2__item__info {
+    text-align: center;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Back side styling (shown on flip) */
+.cards2__item__link .back {
+    background-image: linear-gradient(16deg, #5861df, #d4386f);
+    color: #eef3f4;
+    font-size: large;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    transform: rotateY(180deg); /* Makes the back side inverted */
+    border-radius: 10px;
+}
+
+.cards2 h1{
+    color: #eef3f4;
+    font-size: 35px;
+    font-family: sans-serif;
+    font-weight: bold;
+}

@@ -1,0 +1,51 @@
+/* HeroSection.css */
+
+.hero-container {
+    position: relative; /* Position relative for absolute children */
+    height: 100vh; /* Full height of the viewport */
+    width: 100%; /* Full width */
+    overflow: hidden; /* Prevent overflow of video */
+}
+
+.hero-video {
+    object-fit: cover; /* Cover the entire container */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    position: absolute; /* Position behind the content */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    z-index: 1; /* Behind text */
+}
+
+.hero-content {
+    position: absolute; /* Absolute positioning */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    z-index: 2; /* Above the video */
+    display: flex; /* Use flex to stack elements vertically */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-end; /* Align items to the right */
+    color: white; /* White text for contrast */
+    text-align: right; /* Align text to the right */
+    padding: 10px; /* Padding for spacing */
+}
+
+.hero-content h1 {
+    font-size: 4rem; /* Font size for the main heading */
+    margin: 0; /* Remove default margin */
+    color: #fff; /* White color */
+    font-weight: bolder; /* Bold font */
+}
+
+.hero-content p {
+    font-size: 1rem; /* Font size for the paragraph */
+    margin: 5px 0; /* Margin for spacing */
+    color: rgb(238, 244, 246); /* Light color for readability */
+    font-weight: bold; /* Bold font */
+}
+
+.hero-btns {
+    margin-top: 10px; /* Space between text and buttons */
+    display: flex; /* Use flex for button alignment */
+    gap: 10px; /* Space between buttons */
+}

@@ -1,0 +1,9 @@
+.navbar{
+    background-color: rgba(6, 10, 83, 0.6);
+    color: orange;
+}
+
+.text{
+    font-size: 24px;
+    font-weight:bolder;
+}

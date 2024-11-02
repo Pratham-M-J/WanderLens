@@ -1,0 +1,45 @@
+.cta-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .cta-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    font-size: 20px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Gradient from purple to blue */
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cta-button:hover {
+    background: linear-gradient(135deg, #126bdf 0%, #6a10d0 100%); /* Gradient on hover from light green to cyan */
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px 8px rgba(16, 139, 192, 0.5); /* Adds a greenish glow */
+  }
+  
+  .cta-button span {
+    margin-right: 10px;
+  }
+  
+  .cta-arrow {
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+  }
+  
+  
+  

@@ -1,0 +1,59 @@
+/* Button.css */
+
+/* .btn-mobile class to ensure link displays button styles correctly */
+.btn-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* Existing Button styles */
+:root {
+    --primary: #fff;
+}
+
+.btn {
+    padding: 8px 20px;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn--primary {
+    background-color: var(--primary);
+    color: black;
+    border: 1px solid var(--primary);
+}
+
+.btn--outline {
+    background-color: transparent;
+    color: #fff;
+    padding: 8px 20px;
+    border: 1px solid var(--primary);
+    transition: all 0.3s ease-out;
+}
+
+.btn--medium {
+    padding: 8px 20px;
+    font-size: 20px;
+}
+
+.btn--large {
+    padding: 12px 26px;
+    font-size: 20px;
+}
+.btn--small {
+    padding: 4px 10px;
+    font-size: 18px;
+}
+
+.btn--small:hover,
+.btn--medium:hover,
+.btn--large:hover {
+    background-image: linear-gradient(16deg, #7178da, #b856e6);
+    color: #242424;
+    transition: all 0.3s ease-in;
+}

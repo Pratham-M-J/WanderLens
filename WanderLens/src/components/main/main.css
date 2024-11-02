@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: rgb(6, 8, 48);
+    flex-direction: column;
+    font-family:'Glacial Indifference', sans-serif;;
+}
+
+.main .nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(6, 8, 48);
+    font-size: 24px;
+    padding: 20px;
+    color: #cabfbf;
+    position: relative;
+}
+
+.main .nav img {
+    width: 40px;
+    height: 40px;
+    
+}
+
+.main-container {
+    max-width: 900px;
+    margin: auto;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white;
+    flex-direction: column;
+}
+
+.greet {
+    font-weight: 500;
+    margin: 50px 0;
+    font-size: 42px;
+    color: #e2caca;
+    text-align: center;
+}
+
+#greet-name {
+    background: linear-gradient(16deg, #4b90ff, #ff5546);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+.features{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Adjust the number (3) for desired columns */
+    gap: 15px;
+    padding: 20px;
+}
+
+
+.main .card{
+    height: 200px;
+    padding: 15px;
+    background-color: rgb(107, 158, 230,0.5);
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.main .card:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+#user{
+    border-radius: 50%;
+    margin-left: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+@media (max-width: 768px) {
+    .greet {
+        font-size: 32px;
+    }
+    
+    .main .nav {
+        font-size: 20px;
+    }
+}
