@@ -4,7 +4,7 @@
         "city_name": "New York",
         "description": "A bustling metropolis known for its skyline and vibrant culture.",
         "places": [
-            {"title": "Statue of Liberty", "latitude": 40.6892, "longitude": -74.0445, "description": "Iconic symbol of freedom."},
+            {"title": "Grand Central Station", "latitude": 40.752655, "longitude": -73.977295, "description": "Iconic symbol of freedom."},
             {"title": "Central Park", "latitude": 40.7851, "longitude": -73.9683, "description": "Vast green oasis in the middle of the city."},
             {"title": "Times Square", "latitude": 40.7580, "longitude": -73.9855, "description": "Lively entertainment hub."},
             {"title": "Empire State Building", "latitude": 40.7484, "longitude": -73.9857, "description": "Historic skyscraper with city views."},
@@ -16,9 +16,9 @@
         "city_name": "Brussels",
         "description": "Capital of Belgium known for its historical architecture and chocolates.",
         "places": [
-            {"title": "Grand Place", "latitude": 50.8467, "longitude": 4.3499, "description": "Historic square in the city center."},
-            {"title": "Atomium", "latitude": 50.8949, "longitude": 4.3416, "description": "Unique steel structure with panoramic views."},
-            {"title": "Manneken Pis", "latitude": 50.8451, "longitude": 4.3498, "description": "Iconic bronze statue of a boy."},
+            {"title": "Grand Place", "latitude": 50.8468, "longitude": 4.3524, "description": "Historic square in the city center."},
+            {"title": "Royal Belgian institute of Natural Sciences", "latitude": 50.8368716, "longitude": 4.3781623, "description": "Unique steel structure with panoramic views."},
+            {"title": "Church of Our Blessed Lady of the Sablon", "latitude": 51.204605, "longitude": 3.224090, "description": "Iconic bronze statue of a boy."},
             {"title": "Royal Palace", "latitude": 50.8427, "longitude": 4.3584, "description": "The official palace of the Belgian King."},
             {"title": "Mini-Europe", "latitude": 50.8947, "longitude": 4.3415, "description": "Park with miniature versions of European landmarks."}
         ]

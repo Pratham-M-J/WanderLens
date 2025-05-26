@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <title>Street View Tour Page</title>
+  <link rel="stylesheet" href="test.css">
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const tourId = parseFloat(urlParams.get('tourId'));
     const placeId = parseFloat(urlParams.get('placeId'));
   
     async function generateResponse(place) {
-      const prompt = "You're a AI Tour Guide. All responses in 55 words. Tell me about this place: "+ place.title;
+      const prompt = "You're a AI Tour Guide. All responses in 50 words. Tell me about this place: "+ place.title;
 
       try {
         const response = await fetch('http://localhost:3000/generate', {
@@ -96,7 +97,7 @@
     }
 
     .bg-indigo-50 {
-      background-color: #f0f4ff;
+      background-color: rgb(6,8,48);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -108,12 +109,13 @@
     .container {
       width: 100%;
       max-width: 1400px;
+      
       position: relative;
     }
 
     .pano-container {
       position: relative;
-      background-color: white;
+      background-color: white;zz
       padding: 0 2rem 2rem;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       border-radius: 1rem;
@@ -145,6 +147,7 @@
       font-size: 1.25rem;
       margin-bottom: 1rem;
       text-align: center;
+      
     }
 
     #pano {
@@ -181,7 +184,8 @@
       top: 20px;
       right: 20px;
       width: 300px;
-      background-color: white;
+      
+      background-image: linear-gradient(16deg, #5861df, #dd5aaf);
       padding: 1.5rem;
       border-radius: 0.5rem;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -204,7 +208,7 @@
 
     .tour-guide p {
       font-size: 1rem;
-      color: #6b7280;
+      color:#fff;
       line-height: 1.5;
       margin-bottom: 1rem;
     }

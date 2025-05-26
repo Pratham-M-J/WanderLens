@@ -43,10 +43,18 @@ const TrandingSlider = () => {
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key.toLowerCase() === 'c' && swiperRef.current) {
+      if (event.key.toLowerCase() === 'd' && swiperRef.current) {
         swiperRef.current.slideNext();
       }
+      if (event.key.toLowerCase() === 'f' && swiperRef.current) {
+        // Find the active slide and trigger a click on it
+        const activeSlide = swiperRef.current.slides[swiperRef.current.activeIndex];
+        if (activeSlide) {
+          activeSlide.click();
+        }
+      }
     };
+    
 
     window.addEventListener('keydown', handleKeyDown);
     return () => {
